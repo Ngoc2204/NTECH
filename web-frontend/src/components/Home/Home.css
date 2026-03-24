@@ -1,0 +1,939 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Outfit:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ── Page shell ── */
+.ntech-page {
+    min-height: 100vh;
+    background: #eef2f9;
+    font-family: 'Outfit', sans-serif;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.ntech-page::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(150, 175, 220, 0.3) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Soft center glow */
+.ntech-page::after {
+    content: '';
+    position: fixed;
+    width: 900px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(200, 215, 245, 0.45) 0%, transparent 65%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.ntech-main {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    padding: 1.5rem 0 2.5rem;
+}
+
+.ntech-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ── Hero ── */
+.ntech-hero {
+    background: #ffffff;
+    border: 1px solid rgba(190, 210, 240, 0.6);
+    border-radius: 18px;
+    padding: 2rem 2.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 16px rgba(100, 140, 210, 0.07);
+}
+
+/* Top blue glow line */
+.ntech-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #93c5fd, #60a5fa, transparent);
+    border-radius: 2px;
+    opacity: 0.6;
+}
+
+.ntech-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.015) 50%, transparent 100%);
+    animation: heroShimmer 5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes heroShimmer {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.ntech-hero-orb {
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.07) 0%, transparent 65%);
+    pointer-events: none;
+    animation: orbPulse 6s ease-in-out infinite;
+}
+
+.ntech-hero-orb2 {
+    position: absolute;
+    left: -40px;
+    bottom: -60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(96, 165, 250, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+@keyframes orbPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+.ntech-hero-left {
+    position: relative;
+    z-index: 1;
+}
+
+.ntech-hero-eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    color: #94a3b8;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ntech-hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background: #bfdbfe;
+}
+
+.ntech-hero-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+    line-height: 1.15;
+}
+
+.ntech-hero-title span {
+    color: #3b82f6;
+    position: relative;
+}
+
+.ntech-hero-title span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1.5px;
+    background: linear-gradient(90deg, #93c5fd, transparent);
+}
+
+.ntech-hero-sub {
+    font-size: 12.5px;
+    color: #94a3b8;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+
+.ntech-hero-right {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.ntech-hero-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    color: #3b82f6;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 5px;
+    padding: 5px 14px;
+    letter-spacing: 0.12em;
+}
+
+.ntech-hero-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.ntech-hero-stat {
+    text-align: right;
+}
+
+.ntech-hero-stat-num {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1;
+}
+
+.ntech-hero-stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: #94a3b8;
+    letter-spacing: 0.08em;
+    margin-top: 2px;
+}
+
+/* ── Slides Container ── */
+.ntech-slides-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.ntech-slides {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(100, 140, 210, 0.12);
+}
+
+/* ── Promo Banner ── */
+.ntech-promo-banner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1), transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 16px;
+}
+
+.ntech-promo-banner.active {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 10;
+}
+
+/* ── Slide color themes (light versions) ── */
+.ntech-promo-orange {
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #fef3c7 100%);
+    border: 1px solid rgba(251, 146, 60, 0.25);
+}
+
+.ntech-promo-blue {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #e0f2fe 100%);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.ntech-promo-purple {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #faf5ff 100%);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+/* Dot overlay */
+.ntech-promo-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+    pointer-events: none;
+}
+
+/* ── Orbs ── */
+.ntech-promo-orb-main {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.ntech-promo-orange .ntech-promo-orb-main {
+    background: radial-gradient(circle, rgba(251, 146, 60, 0.2) 0%, transparent 65%);
+}
+
+.ntech-promo-blue .ntech-promo-orb-main {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 65%);
+}
+
+.ntech-promo-purple .ntech-promo-orb-main {
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 65%);
+}
+
+.ntech-promo-orb-secondary {
+    position: absolute;
+    left: -50px;
+    bottom: -70px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.ntech-promo-orange .ntech-promo-orb-secondary {
+    background: radial-gradient(circle, rgba(253, 186, 116, 0.25) 0%, transparent 70%);
+}
+
+.ntech-promo-blue .ntech-promo-orb-secondary {
+    background: radial-gradient(circle, rgba(147, 197, 253, 0.2) 0%, transparent 70%);
+}
+
+.ntech-promo-purple .ntech-promo-orb-secondary {
+    background: radial-gradient(circle, rgba(196, 181, 253, 0.2) 0%, transparent 70%);
+}
+
+/* ── Promo visual disc ── */
+.ntech-promo-visual {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.ntech-promo-disc {
+    width: 108px;
+    height: 108px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ntech-promo-orange .ntech-promo-disc {
+    background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(234, 88, 12, 0.08));
+    border: 1.5px solid rgba(251, 146, 60, 0.35);
+    box-shadow: 0 0 28px rgba(251, 146, 60, 0.15);
+}
+
+.ntech-promo-blue .ntech-promo-disc {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(37, 99, 235, 0.06));
+    border: 1.5px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 28px rgba(59, 130, 246, 0.12);
+}
+
+.ntech-promo-purple .ntech-promo-disc {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.12), rgba(109, 40, 217, 0.06));
+    border: 1.5px solid rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 28px rgba(139, 92, 246, 0.12);
+}
+
+.ntech-promo-disc-inner {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+}
+
+.ntech-promo-orange .ntech-promo-disc-inner {
+    color: #ea580c;
+}
+
+.ntech-promo-blue .ntech-promo-disc-inner {
+    color: #2563eb;
+}
+
+.ntech-promo-purple .ntech-promo-disc-inner {
+    color: #7c3aed;
+}
+
+.ntech-promo-disc-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+}
+
+.ntech-promo-orange .ntech-promo-disc-label {
+    color: #ea580c;
+}
+
+.ntech-promo-blue .ntech-promo-disc-label {
+    color: #2563eb;
+}
+
+.ntech-promo-purple .ntech-promo-disc-label {
+    color: #7c3aed;
+}
+
+/* ── Promo Content ── */
+.ntech-promo-content {
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+}
+
+.ntech-promo-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.15em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 4px;
+    padding: 4px 12px;
+    margin-bottom: 12px;
+}
+
+.ntech-promo-orange .ntech-promo-tag {
+    color: #c2410c;
+    background: rgba(251, 146, 60, 0.12);
+    border: 1px solid rgba(251, 146, 60, 0.3);
+}
+
+.ntech-promo-blue .ntech-promo-tag {
+    color: #1d4ed8;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.ntech-promo-purple .ntech-promo-tag {
+    color: #6d28d9;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+.ntech-promo-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+}
+
+.ntech-promo-orange .ntech-promo-title span {
+    color: #ea580c;
+}
+
+.ntech-promo-blue .ntech-promo-title span {
+    color: #2563eb;
+}
+
+.ntech-promo-purple .ntech-promo-title span {
+    color: #7c3aed;
+}
+
+.ntech-promo-desc {
+    font-size: 12.5px;
+    color: #64748b;
+    margin-bottom: 18px;
+    line-height: 1.65;
+    font-weight: 400;
+    max-width: 380px;
+}
+
+.ntech-promo-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ntech-promo-btn {
+    border-radius: 8px;
+    padding: 8px 22px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.ntech-promo-orange .ntech-promo-btn {
+    background: rgba(251, 146, 60, 0.12);
+    border: 1px solid rgba(251, 146, 60, 0.4);
+    color: #c2410c;
+}
+
+.ntech-promo-orange .ntech-promo-btn:hover {
+    background: rgba(251, 146, 60, 0.22);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(251, 146, 60, 0.18);
+}
+
+.ntech-promo-blue .ntech-promo-btn {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    color: #1d4ed8;
+}
+
+.ntech-promo-blue .ntech-promo-btn:hover {
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(59, 130, 246, 0.15);
+}
+
+.ntech-promo-purple .ntech-promo-btn {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    color: #6d28d9;
+}
+
+.ntech-promo-purple .ntech-promo-btn:hover {
+    background: rgba(139, 92, 246, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(139, 92, 246, 0.15);
+}
+
+.ntech-promo-timer {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    opacity: 0.55;
+}
+
+.ntech-promo-orange .ntech-promo-timer {
+    color: #ea580c;
+}
+
+.ntech-promo-blue .ntech-promo-timer {
+    color: #2563eb;
+}
+
+.ntech-promo-purple .ntech-promo-timer {
+    color: #7c3aed;
+}
+
+/* ── Slide nav ── */
+.ntech-slides-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.ntech-slides-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.ntech-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #dbeafe;
+    border: none;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+}
+
+.ntech-dot:hover {
+    background: #93c5fd;
+    transform: scale(1.2);
+}
+
+.ntech-dot.active {
+    width: 26px;
+    border-radius: 3px;
+    background: #3b82f6;
+}
+
+.ntech-slide-arrow {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #dbeafe;
+    background: #f8faff;
+    color: #93c5fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.ntech-slide-arrow:hover {
+    background: #eff6ff;
+    border-color: #93c5fd;
+    color: #3b82f6;
+}
+
+/* ── Progress bar ── */
+.ntech-slide-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 0 0 16px 16px;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.ntech-slide-progress-bar {
+    height: 100%;
+    background: rgba(59, 130, 246, 0.5);
+    animation: slideProgress 5s linear;
+    transform-origin: left;
+}
+
+@keyframes slideProgress {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* ── Categories ── */
+.ntech-categories {
+    display: flex;
+    gap: 7px;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.ntech-cat {
+    font-size: 11px;
+    font-family: 'IBM Plex Mono', monospace;
+    padding: 5px 14px;
+    border-radius: 6px;
+    border: 1px solid #dbeafe;
+    color: #64748b;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    background: #f8faff;
+    transition: all 0.18s;
+}
+
+.ntech-cat:hover {
+    background: #eff6ff;
+    border-color: #93c5fd;
+    color: #3b82f6;
+}
+
+.ntech-cat.active {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #2563eb;
+    font-weight: 500;
+}
+
+/* ── Section heading ── */
+.ntech-section-hd {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+.ntech-section-hd h4 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748b;
+    letter-spacing: 0.12em;
+    white-space: nowrap;
+}
+
+.ntech-section-hd::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #dbeafe, transparent);
+}
+
+/* ── Product grid ── */
+.ntech-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+@media (max-width: 1024px) {
+    .ntech-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .ntech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .ntech-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── Product card ── */
+.ntech-product-card {
+    background: #ffffff;
+    border: 1px solid rgba(190, 210, 240, 0.6);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(100, 140, 210, 0.05);
+}
+
+.ntech-product-card:hover {
+    border-color: #93c5fd;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.1);
+}
+
+.ntech-product-img {
+    height: 160px;
+    overflow: hidden;
+    background: #f0f7ff;
+    position: relative;
+}
+
+.ntech-product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.ntech-product-card:hover .ntech-product-img img {
+    transform: scale(1.04);
+}
+
+/* Badges */
+.ntech-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+}
+
+.badge-new {
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+.badge-hot {
+    background: #fff7ed;
+    color: #c2410c;
+    border: 1px solid rgba(251, 146, 60, 0.35);
+}
+
+/* Card body */
+.ntech-product-body {
+    padding: 12px 14px 14px;
+}
+
+.ntech-product-cat {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: #93c5fd;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.ntech-product-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e293b;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ntech-product-spec {
+    font-size: 11.5px;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    height: 34px;
+    overflow: hidden;
+}
+
+.ntech-product-price {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+}
+
+.ntech-add-btn {
+    width: 100%;
+    padding: 7px;
+    background: #f0f7ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 7px;
+    color: #3b82f6;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.ntech-add-btn:hover {
+    background: #dbeafe;
+    border-color: #93c5fd;
+}
+
+/* ── Loading ── */
+.ntech-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 4rem;
+    color: #94a3b8;
+    font-size: 12.5px;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.06em;
+}
+
+.ntech-spinner {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #dbeafe;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Empty ── */
+.ntech-empty {
+    text-align: center;
+    padding: 4rem;
+    font-size: 12.5px;
+    color: #94a3b8;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: 0.08em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .ntech-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 1.5rem;
+    }
+
+    .ntech-hero-right {
+        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .ntech-hero-title {
+        font-size: 26px;
+    }
+
+    .ntech-slides {
+        height: 195px;
+    }
+
+    .ntech-promo-banner {
+        padding: 0 1.5rem;
+    }
+
+    .ntech-promo-title {
+        font-size: 22px;
+    }
+
+    .ntech-promo-visual {
+        display: none;
+    }
+}

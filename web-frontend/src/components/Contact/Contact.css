@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Outfit:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ── Page ── */
+.contact-page {
+    min-height: calc(100vh - 62px);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 50%, #eef2f9 100%);
+    background-attachment: fixed;
+    padding: 2rem;
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.contact-page::before {
+    content: '';
+    position: fixed;
+    width: 900px;
+    height: 600px;
+    background: radial-gradient(ellipse 900px 600px at 70% 50%, rgba(100, 165, 245, 0.12) 0%, transparent 70%);
+    top: 0;
+    right: -200px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.contact-page::after {
+    content: '';
+    position: fixed;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(ellipse 700px 700px at 20% 80%, rgba(150, 200, 255, 0.08) 0%, transparent 65%);
+    bottom: -100px;
+    left: -150px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Back Button ── */
+.contact-back-btn {
+    background: #ffffff;
+    border: 1.5px solid #dbeafe;
+    padding: 8px 16px;
+    border-radius: 11px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2563eb;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.02em;
+    box-shadow: 0 1px 3px rgba(59, 130, 246, 0.05);
+}
+
+.contact-back-btn:hover {
+    background: linear-gradient(135deg, #ffffff, #f0f7ff);
+    border-color: #60a5fa;
+    transform: translateX(-4px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+}
+
+/* ── Hero Section ── */
+.contact-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.02em;
+}
+
+.contact-subtitle {
+    font-size: 18px;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ── Container ── */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Contact Methods ── */
+.contact-methods {
+    margin-bottom: 4rem;
+}
+
+.methods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.method-card {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(100, 150, 255, 0.15);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 16px rgba(59, 130, 246, 0.06);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.method-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.15);
+    border-color: #93c5fd;
+}
+
+.method-icon {
+    font-size: 48px;
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.method-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: 0.03em;
+}
+
+.method-content {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2563eb;
+    margin: 0 0 0.5rem 0;
+}
+
+.method-desc {
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* ── Contact Section ── */
+.contact-section {
+    margin-bottom: 4rem;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+}
+
+/* ── Form Wrapper ── */
+.contact-form-wrapper {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(100, 150, 255, 0.15);
+    padding: 2.5rem;
+    box-shadow: 0 2px 16px rgba(59, 130, 246, 0.06);
+}
+
+.contact-form-wrapper h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 2rem 0;
+    letter-spacing: 0.03em;
+}
+
+/* ── Form ── */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.form-group label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+    background: #f8faff;
+    border: 1.5px solid rgba(100, 165, 255, 0.2);
+    border-radius: 11px;
+    padding: 12px 14px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    color: #1e293b;
+    transition: all 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ── Submit Button ── */
+.submit-btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(59, 130, 246, 0.45);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.submit-btn:active {
+    transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* ── Form Messages ── */
+.form-message {
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    animation: slideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.form-message.success {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    border: 1.5px solid #86efac;
+    color: #15803d;
+}
+
+.form-message.error {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    border: 1.5px solid #fca5a5;
+    color: #b91c1c;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Info Wrapper ── */
+.contact-info-wrapper {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(100, 150, 255, 0.15);
+    padding: 2.5rem;
+    box-shadow: 0 2px 16px rgba(59, 130, 246, 0.06);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.contact-info-wrapper h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 2rem 0;
+    letter-spacing: 0.03em;
+}
+
+/* ── Info Box ── */
+.info-box {
+    margin-bottom: 2rem;
+}
+
+.info-box h4 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: 0.03em;
+}
+
+.info-box p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.6;
+}
+
+.info-box .highlight {
+    font-weight: 700;
+    color: #2563eb;
+    font-size: 14px;
+    margin-top: 0.75rem;
+}
+
+/* ── Social Links ── */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #f0f7ff;
+    border: 1.5px solid #dbeafe;
+    border-radius: 10px;
+    font-weight: 700;
+    color: #2563eb;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 16px;
+}
+
+.social-links a:hover {
+    background: #3b82f6;
+    color: #fff;
+    border-color: #3b82f6;
+    transform: translateY(-2px);
+}
+
+/* ── FAQ Section ── */
+.contact-faq {
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid rgba(100, 150, 255, 0.15);
+    padding: 3rem;
+    box-shadow: 0 2px 16px rgba(59, 130, 246, 0.06);
+}
+
+.contact-faq h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 2.5rem 0;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background: linear-gradient(135deg, #f8fbff, #f0f7ff);
+    border: 1px solid rgba(100, 165, 255, 0.2);
+    border-radius: 14px;
+    padding: 1.75rem;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.faq-item:hover {
+    border-color: #93c5fd;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.1);
+    transform: translateY(-4px);
+}
+
+.faq-item h4 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 0.75rem 0;
+    letter-spacing: 0.03em;
+    line-height: 1.5;
+}
+
+.faq-item p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info-wrapper {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-page {
+        padding: 1rem;
+    }
+
+    .contact-title {
+        font-size: 32px;
+    }
+
+    .methods-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+
+    .contact-form-wrapper,
+    .contact-info-wrapper {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-faq {
+        padding: 2rem 1.5rem;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-title {
+        font-size: 24px;
+    }
+
+    .contact-subtitle {
+        font-size: 14px;
+    }
+
+    .methods-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-wrapper,
+    .contact-info-wrapper {
+        padding: 1.25rem;
+    }
+
+    .contact-faq {
+        padding: 1.5rem;
+    }
+
+    .contact-faq h2 {
+        font-size: 20px;
+    }
+
+    .faq-item {
+        padding: 1.25rem;
+    }
+}

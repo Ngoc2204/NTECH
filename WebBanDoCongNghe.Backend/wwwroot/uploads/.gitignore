@@ -1,0 +1,4 @@
+# Ignore uploaded image files
+*
+!.gitignore
+!.gitkeep

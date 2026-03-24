@@ -1,0 +1,848 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Outfit:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+/* ── Page ── */
+.promotions-page {
+    min-height: calc(100vh - 62px);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 50%, #eef2f9 100%);
+    background-attachment: fixed;
+    padding: 2rem;
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.promotions-page::before {
+    content: '';
+    position: fixed;
+    width: 900px;
+    height: 600px;
+    background: radial-gradient(ellipse 900px 600px at 70% 50%, rgba(100, 165, 245, 0.12) 0%, transparent 70%);
+    top: 0;
+    right: -200px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.promotions-page::after {
+    content: '';
+    position: fixed;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(ellipse 700px 700px at 20% 80%, rgba(150, 200, 255, 0.08) 0%, transparent 65%);
+    bottom: -100px;
+    left: -150px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Back Button ── */
+.promotions-back-btn {
+    background: #ffffff;
+    border: 1.5px solid #dbeafe;
+    padding: 8px 16px;
+    border-radius: 11px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2563eb;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.02em;
+    box-shadow: 0 1px 3px rgba(59, 130, 246, 0.05);
+}
+
+.promotions-back-btn:hover {
+    background: linear-gradient(135deg, #ffffff, #f0f7ff);
+    border-color: #60a5fa;
+    transform: translateX(-4px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+}
+
+/* ── Hero Section ── */
+.promotions-hero {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 3rem;
+}
+
+.hero-content {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e8f3ff 100%);
+    border-radius: 20px;
+    border: 1.5px solid rgba(59, 130, 246, 0.2);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.12);
+}
+
+.hero-content h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 12px;
+    letter-spacing: 0.02em;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #475569;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ── Tabs ── */
+.promotions-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 2.5rem;
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: #ffffff;
+    border: 1.5px solid #dbeafe;
+    padding: 12px 24px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #475569;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    letter-spacing: 0.01em;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.06);
+}
+
+.tab-btn:hover {
+    border-color: #60a5fa;
+    color: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.12);
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    border-color: #2563eb;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35);
+}
+
+/* ── Container ── */
+.promotions-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Section ── */
+.promotion-section {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-header h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 12px;
+    letter-spacing: 0.02em;
+}
+
+.section-subtitle {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ── Timer Banner ── */
+.timer-banner {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1.5px solid #fcd34d;
+    padding: 1.75rem 2rem;
+    border-radius: 16px;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    box-shadow: 0 6px 20px rgba(250, 204, 21, 0.2);
+}
+
+.timer-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: #92400e;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+}
+
+.timer-value {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #d97706;
+    letter-spacing: 0.02em;
+}
+
+/* ── Info Banner ── */
+.info-banner {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border: 1.5px solid #93c5fd;
+    padding: 1.5rem 2rem;
+    border-radius: 14px;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    color: #1e40af;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+/* ── Products Grid ── */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+}
+
+.promo-product-card {
+    background: #ffffff;
+    border: 1px solid rgba(100, 165, 255, 0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 2px 12px rgba(59, 130, 246, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.promo-product-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.25);
+}
+
+.product-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8fbff, #f0f7ff);
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.promo-product-card:hover .product-image-wrapper img {
+    transform: scale(1.08);
+}
+
+/* ── Discount Badge ── */
+.discount-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+}
+
+.discount-badge.seasonal {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+}
+
+/* ── Product Info ── */
+.product-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+}
+
+.product-info h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.old-price {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    color: #94a3b8;
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+}
+
+.new-price {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #dc2626;
+    letter-spacing: 0.02em;
+}
+
+.promo-product-card.seasonal .new-price {
+    color: #f97316;
+}
+
+.save-badge {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #fecaca;
+}
+
+.save-badge.seasonal {
+    background: #fed7aa;
+    color: #92400e;
+    border-color: #fdba74;
+}
+
+.product-view-btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    letter-spacing: 0.01em;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.product-view-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+.product-view-btn.seasonal {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
+}
+
+.product-view-btn.seasonal:hover {
+    box-shadow: 0 8px 20px rgba(249, 115, 22, 0.4);
+}
+
+/* ── Coupons Grid ── */
+.coupons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.coupon-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+    border: 2px dashed #93c5fd;
+    border-radius: 16px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.12);
+    position: relative;
+}
+
+.coupon-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #ffffff, #f0f7ff);
+    border-radius: 50%;
+    box-shadow: inset 0 2px 4px rgba(59, 130, 246, 0.15);
+}
+
+.coupon-card::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #ffffff, #f0f7ff);
+    border-radius: 50%;
+    box-shadow: inset 0 2px 4px rgba(59, 130, 246, 0.15);
+}
+
+.coupon-card:hover {
+    transform: translateY(-4px);
+    border-color: #60a5fa;
+    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.2);
+}
+
+/* ── Coupon Header ── */
+.coupon-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.coupon-discount {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: 0.02em;
+}
+
+.coupon-badge {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+}
+
+/* ── Coupon Body ── */
+.coupon-body {
+    flex: 1;
+}
+
+.coupon-body h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 10px;
+    letter-spacing: 0.01em;
+}
+
+.coupon-min-order {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+.coupon-min-order strong {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+/* ── Coupon Code ── */
+.coupon-code {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.coupon-code code {
+    flex: 1;
+    background: linear-gradient(135deg, #f0f7ff, #e8f3ff);
+    border: 1.5px solid #dbeafe;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+.copy-btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+}
+
+.copy-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+.copy-btn:active {
+    transform: translateY(0);
+}
+
+/* ── Terms Banner ── */
+.terms-banner {
+    background: linear-gradient(135deg, #f0f7ff, #e8f3ff);
+    border: 1.5px solid #93c5fd;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.12);
+}
+
+.terms-banner h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 1rem;
+    letter-spacing: 0.02em;
+}
+
+.terms-banner ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.terms-banner li {
+    padding-left: 28px;
+    position: relative;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.terms-banner li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2563eb;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+/* ── Newsletter Section ── */
+.newsletter-section {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.35);
+    overflow: hidden;
+}
+
+.newsletter-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.newsletter-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+}
+
+.newsletter-section h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 12px;
+    letter-spacing: 0.02em;
+}
+
+.newsletter-section p {
+    font-size: 16px;
+    margin: 0 0 1.5rem;
+    opacity: 0.95;
+    line-height: 1.6;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.95);
+    border: none;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.newsletter-btn {
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 12px 28px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    letter-spacing: 0.01em;
+}
+
+.newsletter-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* ── Loading ── */
+.promotions-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 16px;
+    color: #94a3b8;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    position: relative;
+    z-index: 1;
+}
+
+.ntech-spinner {
+    width: 40px;
+    height: 40px;
+    border: 2.5px solid rgba(59, 130, 246, 0.15);
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .coupons-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .promotions-page {
+        padding: 1.5rem;
+    }
+
+    .hero-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .promotions-tabs {
+        gap: 8px;
+    }
+
+    .tab-btn {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+
+    .section-header h2 {
+        font-size: 24px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.25rem;
+    }
+
+    .coupons-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timer-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .newsletter-input,
+    .newsletter-btn {
+        width: 100%;
+    }
+
+    .terms-banner {
+        padding: 1.5rem;
+    }
+
+    .terms-banner h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .promotions-page {
+        padding: 1rem;
+    }
+
+    .hero-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 24px;
+    }
+
+    .hero-content p {
+        font-size: 13px;
+    }
+
+    .promotions-tabs {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tab-btn {
+        width: 100%;
+        padding: 12px 16px;
+    }
+
+    .section-header h2 {
+        font-size: 20px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timer-value {
+        font-size: 24px;
+    }
+
+    .discount-badge {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .coupon-discount {
+        font-size: 32px;
+    }
+
+    .coupon-code {
+        flex-direction: column;
+    }
+
+    .copy-btn {
+        width: 100%;
+    }
+
+    .newsletter-section {
+        padding: 2rem 1rem;
+    }
+
+    .newsletter-section h2 {
+        font-size: 22px;
+    }
+
+    .newsletter-section p {
+        font-size: 14px;
+    }
+}

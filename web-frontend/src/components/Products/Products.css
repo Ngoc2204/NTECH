@@ -1,0 +1,564 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Outfit:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ─── Page shell ─── */
+.prods-page {
+    min-height: 100vh;
+    background: #eef2f9;
+    font-family: 'Outfit', sans-serif;
+    color: #1e293b;
+}
+
+/* ─── Topbar ─── */
+.prods-topbar {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(190, 210, 240, 0.6);
+    box-shadow: 0 2px 12px rgba(100, 140, 210, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.prods-topbar-inner {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 0.85rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.prods-topbar-left {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.prods-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: 0.06em;
+    margin: 0;
+}
+
+.prods-count {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: #94a3b8;
+    letter-spacing: 0.06em;
+}
+
+.prods-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Search */
+.prods-search-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.prods-search-icon {
+    position: absolute;
+    left: 10px;
+    width: 14px;
+    height: 14px;
+    color: #94a3b8;
+    pointer-events: none;
+}
+
+.prods-search {
+    width: 240px;
+    padding: 7px 32px 7px 32px;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-family: 'Outfit', sans-serif;
+    background: #f8faff;
+    color: #1e293b;
+    outline: none;
+    transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.prods-search:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.prods-search::placeholder { color: #cbd5e1; }
+
+.prods-search-clear {
+    position: absolute;
+    right: 8px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 0;
+    line-height: 1;
+}
+
+.prods-search-clear:hover { color: #ef4444; }
+
+/* Suggestions dropdown */
+.prods-suggestions {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.12);
+    overflow: hidden;
+    z-index: 100;
+}
+
+.prods-suggestion-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 12.5px;
+    font-family: 'Outfit', sans-serif;
+    color: #1e293b;
+    transition: background 0.12s;
+}
+
+.prods-suggestion-item:hover { background: #eff6ff; }
+
+.prods-suggest-icon {
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.prods-suggest-type {
+    margin-left: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: #94a3b8;
+    letter-spacing: 0.06em;
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Highlight match */
+.prods-highlight {
+    background: #fef08a;
+    color: #713f12;
+    border-radius: 2px;
+    padding: 0 1px;
+    font-style: normal;
+}
+
+/* Search tag badge */
+.prods-search-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #2563eb;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    padding: 3px 10px;
+    letter-spacing: 0.02em;
+}
+
+.prods-tag-x {
+    background: none;
+    border: none;
+    color: #93c5fd;
+    cursor: pointer;
+    font-size: 10px;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.15s;
+}
+
+.prods-tag-x:hover { color: #ef4444; }
+
+
+/* Sort */
+.prods-sort {
+    padding: 7px 12px;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-family: 'Outfit', sans-serif;
+    background: #f8faff;
+    color: #1e293b;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.18s;
+}
+
+.prods-sort:focus {
+    border-color: #3b82f6;
+}
+
+/* ─── Body layout ─── */
+.prods-body {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 3rem;
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+}
+
+/* ─── Sidebar ─── */
+.prods-sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.prods-reset-btn {
+    width: 100%;
+    padding: 7px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    color: #ef4444;
+    font-size: 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: background 0.18s;
+}
+
+.prods-reset-btn:hover {
+    background: #fee2e2;
+}
+
+/* Filter block */
+.prods-filter-block {
+    background: #ffffff;
+    border: 1px solid rgba(190, 210, 240, 0.6);
+    border-radius: 12px;
+    padding: 14px 12px;
+    box-shadow: 0 1px 5px rgba(100, 140, 210, 0.05);
+}
+
+.prods-filter-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    color: #94a3b8;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 8px;
+}
+
+/* Category / Price buttons */
+.prods-filter-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 6px 10px;
+    font-size: 12.5px;
+    font-family: 'Outfit', sans-serif;
+    color: #475569;
+    background: transparent;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    margin-bottom: 2px;
+}
+
+.prods-filter-item:hover {
+    background: #eff6ff;
+    color: #2563eb;
+}
+
+.prods-filter-item.active {
+    background: #eff6ff;
+    color: #2563eb;
+    font-weight: 600;
+    position: relative;
+}
+
+.prods-filter-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 3px;
+    background: #3b82f6;
+    border-radius: 2px;
+}
+
+/* Custom price */
+.prods-custom-price {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 0 4px;
+}
+
+.prods-price-input {
+    flex: 1;
+    min-width: 0;
+    padding: 5px 8px;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-family: 'Outfit', sans-serif;
+    color: #1e293b;
+    background: #f8faff;
+    outline: none;
+    transition: border-color 0.18s;
+}
+
+.prods-price-input:focus { border-color: #3b82f6; }
+.prods-price-input::-webkit-outer-spin-button,
+.prods-price-input::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+.prods-price-dash {
+    font-size: 12px;
+    color: #94a3b8;
+    flex-shrink: 0;
+}
+
+/* Brand checkboxes */
+.prods-brand-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin-bottom: 2px;
+}
+
+.prods-brand-item:hover { background: #eff6ff; }
+
+.prods-brand-checkbox {
+    width: 14px;
+    height: 14px;
+    accent-color: #3b82f6;
+    cursor: pointer;
+}
+
+.prods-brand-label {
+    font-size: 12.5px;
+    color: #475569;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* ─── Main content ─── */
+.prods-main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Grid */
+.prods-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+@media (max-width: 1280px) { .prods-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 960px)  { .prods-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px)  { .prods-grid { grid-template-columns: 1fr; } }
+
+/* Card */
+.prods-card {
+    background: #ffffff;
+    border: 1px solid rgba(190, 210, 240, 0.6);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(100, 140, 210, 0.05);
+}
+
+.prods-card:hover {
+    border-color: #93c5fd;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.1);
+}
+
+.prods-card-img {
+    height: 170px;
+    background: #f0f7ff;
+    position: relative;
+    overflow: hidden;
+}
+
+.prods-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.prods-card:hover .prods-card-img img {
+    transform: scale(1.04);
+}
+
+.prods-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+}
+
+.badge-new { background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; }
+.badge-hot { background: #fff7ed; color: #c2410c; border: 1px solid rgba(251, 146, 60, 0.35); }
+
+/* Card body */
+.prods-card-body { padding: 12px 14px 14px; }
+
+.prods-card-cat {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: #93c5fd;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.prods-card-brand {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    color: #64748b;
+    letter-spacing: 0.04em;
+    margin-bottom: 3px;
+}
+
+.prods-card-name {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #1e293b;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.prods-card-spec {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    height: 33px;
+    overflow: hidden;
+}
+
+.prods-card-price {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+}
+
+.prods-add-btn {
+    width: 100%;
+    padding: 7px;
+    background: #f0f7ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 7px;
+    color: #3b82f6;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.prods-add-btn:hover {
+    background: #dbeafe;
+    border-color: #93c5fd;
+}
+
+.prods-add-btn.added {
+    background: #dcfce7;
+    border-color: #86efac;
+    color: #16a34a;
+}
+
+/* Loading / Empty */
+.prods-loading,
+.prods-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 5rem 2rem;
+    color: #94a3b8;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+}
+
+.prods-empty-icon { font-size: 38px; }
+.prods-empty-text { margin-bottom: 4px; }
+
+.prods-spinner {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #dbeafe;
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: prodspin 0.8s linear infinite;
+}
+
+@keyframes prodspin { to { transform: rotate(360deg); } }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+    .prods-body {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .prods-sidebar {
+        width: 100%;
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .prods-filter-block {
+        flex: 1;
+        min-width: 160px;
+    }
+
+    .prods-search { width: 100%; }
+}

@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Outfit:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root { height: 100%; }
+
+body {
+    background: #eef2f9;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ── Page wrapper ── */
+.login-container {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    background: #eef2f9;
+}
+
+/* Dot grid */
+.login-container::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(rgba(150,175,220,0.35) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Soft radial center glow */
+.login-container::after {
+    content: '';
+    position: fixed;
+    width: 800px;
+    height: 500px;
+    background: radial-gradient(ellipse, rgba(200,215,245,0.55) 0%, transparent 65%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Floating labels */
+.login-float-label {
+    position: fixed;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    color: rgba(130,155,200,0.55);
+    letter-spacing: 0.14em;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatIn 1s ease both;
+}
+.login-float-label:nth-child(1) { top: 13%; left: 5%;   animation-delay: 0.2s; }
+.login-float-label:nth-child(2) { top: 18%; right: 6%;  animation-delay: 0.4s; }
+.login-float-label:nth-child(3) { bottom: 17%; left: 6%; animation-delay: 0.6s; }
+.login-float-label:nth-child(4) { bottom: 11%; right: 5%; animation-delay: 0.8s; }
+
+@keyframes floatIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Card ── */
+.login-card {
+    width: 100%;
+    max-width: 440px;
+    background: #ffffff;
+    border: 1px solid rgba(190,210,240,0.6);
+    border-radius: 22px;
+    padding: 2rem 2rem 1.75rem;
+    position: relative;
+    z-index: 2;
+    box-shadow:
+        0 1px 2px rgba(100,140,210,0.04),
+        0 10px 40px rgba(100,140,210,0.10),
+        0 0 0 0.5px rgba(255,255,255,0.95) inset;
+    animation: cardUp 0.7s cubic-bezier(.16,1,.3,1) both;
+}
+
+@keyframes cardUp {
+    from { opacity: 0; transform: translateY(24px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Top blue glow line */
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 12%; right: 12%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #93c5fd, #60a5fa, transparent);
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+/* Top-right corner accent */
+.login-card::after {
+    content: '';
+    position: absolute;
+    top: 14px; right: 14px;
+    width: 18px; height: 18px;
+    border-top: 1.5px solid #bfdbfe;
+    border-right: 1.5px solid #bfdbfe;
+    border-radius: 0 5px 0 0;
+}
+
+.login-corner-bl {
+    position: absolute;
+    bottom: 14px; left: 14px;
+    width: 18px; height: 18px;
+    border-bottom: 1.5px solid #bfdbfe;
+    border-left: 1.5px solid #bfdbfe;
+    border-radius: 0 0 0 5px;
+}
+
+/* ── Logo Hero ── */
+.login-logo-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid #f0f5ff;
+    position: relative;
+}
+
+.login-logo-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #eff6ff 0%, #dbeafe 100%);
+    border: 1.5px solid #bfdbfe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.8rem;
+    position: relative;
+    box-shadow:
+        0 0 0 7px rgba(59,130,246,0.05),
+        0 6px 20px rgba(59,130,246,0.13);
+    overflow: hidden;
+}
+
+.login-logo-circle::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(145deg, rgba(255,255,255,0.5) 0%, transparent 55%);
+    border-radius: 19px;
+    pointer-events: none;
+}
+
+.login-logo-circle img {
+    width: 55%;
+    height: 55%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.login-logo-fallback {
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #3b82f6;
+    letter-spacing: 0.04em;
+    position: relative;
+    z-index: 1;
+}
+
+.login-brand-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: 0.12em;
+    line-height: 1;
+    margin-bottom: 2px;
+}
+
+.login-brand-name span {
+    color: #3b82f6;
+}
+
+.login-brand-sub {
+    font-size: 9px;
+    color: #94a3b8;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* ── Title ── */
+.login-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1e293b;
+    letter-spacing: 0.05em;
+    margin-bottom: 3px;
+}
+
+.login-subtitle {
+    font-size: 12.5px;
+    color: #94a3b8;
+    margin-bottom: 1.2rem;
+    font-weight: 400;
+}
+
+/* ── Form ── */
+.form-group {
+    margin-bottom: 0.85rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    color: #64748b;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+}
+
+.form-group input {
+    width: 100%;
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+    border-radius: 9px;
+    padding: 0.72rem 1rem;
+    color: #1e293b;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.form-group input::placeholder { color: #c7d7f0; }
+.form-group input:focus {
+    border-color: #93c5fd;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.08);
+}
+
+/* ── Button ── */
+.login-button {
+    width: 100%;
+    padding: 0.88rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border: none;
+    border-radius: 9px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.16em;
+    transition: opacity 0.2s, box-shadow 0.2s, transform 0.1s;
+    margin-top: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(59,130,246,0.3);
+}
+
+.login-button::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+    transition: left 0.5s;
+}
+
+.login-button:hover::before { left: 100%; }
+.login-button:hover {
+    opacity: 0.92;
+    box-shadow: 0 6px 24px rgba(59,130,246,0.38);
+}
+.login-button:active { transform: scale(0.98); }
+.login-button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ── Error ── */
+.error-message {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    font-size: 11px;
+    color: #dc2626;
+    margin-bottom: 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* ── Register Prompt ── */
+.login-register-prompt {
+    text-align: center;
+    font-size: 12.5px;
+    color: #94a3b8;
+    margin-top: 1.2rem;
+    margin-bottom: 1.1rem;
+}
+
+.login-register-prompt a {
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.login-register-prompt a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+
+
+@media (max-width: 480px) {
+    .login-card { padding: 2rem 1.5rem 1.75rem; }
+    .login-float-label { display: none; }
+}

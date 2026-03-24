@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Outfit:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ── Page ── */
+.product-detail-page {
+    min-height: calc(100vh - 62px);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 50%, #eef2f9 100%);
+    background-attachment: fixed;
+    padding: 2rem 2rem;
+    font-family: 'Outfit', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.product-detail-page::before {
+    content: '';
+    position: fixed;
+    width: 900px;
+    height: 600px;
+    background: radial-gradient(ellipse 900px 600px at 70% 50%, rgba(100, 165, 245, 0.12) 0%, transparent 70%);
+    top: 0;
+    right: -200px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.product-detail-page::after {
+    content: '';
+    position: fixed;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(ellipse 700px 700px at 20% 80%, rgba(150, 200, 255, 0.08) 0%, transparent 65%);
+    bottom: -100px;
+    left: -150px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Back Button ── */
+.product-detail-back-btn {
+    background: #ffffff;
+    border: 1.5px solid #dbeafe;
+    padding: 8px 16px;
+    border-radius: 11px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2563eb;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.02em;
+    box-shadow: 0 1px 3px rgba(59, 130, 246, 0.05);
+}
+
+.product-detail-back-btn:hover {
+    background: linear-gradient(135deg, #ffffff, #f0f7ff);
+    border-color: #60a5fa;
+    transform: translateX(-4px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+}
+
+.product-detail-back-btn:active {
+    transform: translateX(-2px);
+}
+
+/* ── Container Card ── */
+.product-detail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
+    max-width: 1150px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 2.75rem 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(100, 150, 255, 0.15);
+    box-shadow: 0 2px 16px rgba(59, 130, 246, 0.06), 0 8px 32px rgba(100, 180, 255, 0.08);
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
+
+.product-detail-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+    border-radius: 1px;
+    opacity: 0.7;
+}
+
+.product-detail-container::after {
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    border-top: 1.5px solid rgba(59, 130, 246, 0.2);
+    border-right: 1.5px solid rgba(59, 130, 246, 0.2);
+    border-radius: 0 6px 0 0;
+}
+
+/* ── Image ── */
+.product-detail-image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-detail-image {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 1;
+    border: 1px solid rgba(100, 165, 255, 0.2);
+    border-radius: 18px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #f8fbff, #f0f7ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    position: relative;
+}
+
+.product-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.product-detail-image:hover img {
+    transform: scale(1.08);
+}
+
+/* ── Info Section ── */
+.product-detail-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.product-detail-category {
+    display: inline-block;
+    background: linear-gradient(135deg, #f0f7ff, #e8f3ff);
+    color: #2563eb;
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    width: fit-content;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
+}
+
+.product-detail-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0.5rem 0 0 0;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+}
+
+.product-detail-brand {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.detail-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9.5px;
+    color: #94a3b8;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.detail-value {
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ── Price ── */
+.product-detail-price {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #2563eb;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, #f0f7ff, #e8f3ff);
+    border-radius: 12px;
+    border: 1.5px solid rgba(59, 130, 246, 0.25);
+    border-left: 4px solid #3b82f6;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+/* ── Stock ── */
+.product-detail-stock {
+    font-size: 13.5px;
+    padding: 10px 14px;
+    border-radius: 9px;
+    background: #f8faff;
+    border: 1px solid #dbeafe;
+}
+
+.product-detail-stock .in-stock {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.product-detail-stock .out-of-stock {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+/* ── Specs ── */
+.product-detail-specs {
+    background: linear-gradient(135deg, #f8fbff, #f0f7ff);
+    padding: 1.5rem 1.75rem;
+    border-radius: 14px;
+    border: 1px solid rgba(100, 165, 255, 0.2);
+    border-left: 3.5px solid #3b82f6;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
+}
+
+.product-detail-specs h3 {
+    margin: 0 0 12px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: 0.03em;
+}
+
+.product-detail-specs p {
+    margin: 0;
+    color: #475569;
+    line-height: 1.7;
+    font-size: 13.5px;
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+/* ── Actions ── */
+.product-detail-actions {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-end;
+    margin-top: 0.5rem;
+}
+
+.quantity-selector {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.quantity-selector label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    color: #64748b;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.quantity-input {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid rgba(100, 165, 255, 0.3);
+    border-radius: 11px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f8fbff, #f0f7ff);
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.08);
+}
+
+.qty-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #2563eb;
+    font-weight: 700;
+    transition: all 0.2s;
+    line-height: 1;
+}
+
+.qty-btn:hover {
+    background: rgba(59, 130, 246, 0.08);
+    color: #1d4ed8;
+}
+
+.qty-btn:active {
+    background: rgba(59, 130, 246, 0.12);
+}
+
+.quantity-input input {
+    flex: 1;
+    border: none;
+    text-align: center;
+    padding: 10px 4px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    background: transparent;
+    font-family: 'Outfit', sans-serif;
+}
+
+.quantity-input input:focus {
+    outline: none;
+}
+
+.product-detail-add-cart-btn {
+    flex: 2;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35);
+}
+
+.product-detail-add-cart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(59, 130, 246, 0.45);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.product-detail-add-cart-btn:active {
+    transform: translateY(-1px);
+}
+
+.product-detail-add-cart-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.product-detail-success-message {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    border: 1.5px solid #86efac;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #15803d;
+    font-weight: 600;
+    font-size: 14px;
+    animation: slideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.view-cart-link {
+    background: transparent;
+    border: none;
+    color: #15803d;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+.view-cart-link:hover {
+    color: #084c2e;
+    text-decoration: underline;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Meta ── */
+.product-detail-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8fbff, #f0f7ff);
+    border-radius: 14px;
+    border: 1px solid rgba(100, 165, 255, 0.2);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.08);
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.meta-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 8px;
+    color: #94a3b8;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.meta-value {
+    color: #1e293b;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* ── Loading ── */
+.product-detail-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 16px;
+    color: #94a3b8;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+}
+
+.ntech-spinner {
+    width: 40px;
+    height: 40px;
+    border: 2.5px solid rgba(59, 130, 246, 0.15);
+    border-top-color: #3b82f6;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── Error ── */
+.product-detail-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 2rem;
+    text-align: center;
+}
+
+.product-detail-error h2 {
+    font-family: 'Rajdhani', sans-serif;
+    color: #1e293b;
+    font-size: 24px;
+    letter-spacing: 0.03em;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .product-detail-container {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+        padding: 1.5rem;
+    }
+    .product-detail-image-section { order: 1; }
+    .product-detail-info-section  { order: 2; }
+    .product-detail-name          { font-size: 22px; }
+    .product-detail-price         { font-size: 22px; }
+    .product-detail-actions       { flex-direction: column; }
+    .quantity-selector            { width: 100%; }
+    .product-detail-add-cart-btn  { width: 100%; }
+    .product-detail-meta          { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .product-detail-page      { padding: 1rem; }
+    .product-detail-container { padding: 1rem; gap: 1.25rem; }
+    .product-detail-name      { font-size: 20px; }
+    .product-detail-price     { font-size: 20px; }
+    .product-detail-image     { max-width: 100%; }
+}
